@@ -13,19 +13,46 @@
     <body>
         <div class="container" id="distributer">
             <h1> {{ head }} </h1>
-            Distribute
-            <input v-model.number="k" type="number" step="1">
-            <select v-model.number="kMode" type="number">
-                <option value="0">DISTINCT</option>
-                <option value="1">INDISTNCT</option>
-            </select>
-            Into
-            <input v-model.number="n" type="number" step="1">
-            <select v-model.number="nMode" type="number">
-                <option value="0">DISTINCT</option>
-                <option value="1">INDISTNCT</option>
-            </select>
-            <p> {{ k }} {{ modes[kMode] }} into {{ n }} {{ modes[nMode] }} = {{ result }} </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Distribute</th>
+                        <th>Into</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input v-model.number="k" type="number" step="1">
+                            <select v-model.number="kMode" type="number">
+                                <option value="0">DISTINCT</option>
+                                <option value="1">INDISTNCT</option>
+                            </select>
+                        </td>
+
+                        <td>
+                            <input v-model.number="n" type="number" step="1">
+                            <select v-model.number="nMode" type="number">
+                                <option value="0">DISTINCT</option>
+                                <option value="1">INDISTNCT</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select v-model="option">
+                                <option value="0">No Restriction</option>
+                                <option value="1">At most 1</option>
+                                <option value="2">At least 1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center info" colspan="3">
+                            <p> {{ k }} {{ modes[kMode] }} into {{ n }} {{ modes[nMode] }} = {{ result }} where {{ options[option] }} </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
