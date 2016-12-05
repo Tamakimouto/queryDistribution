@@ -165,7 +165,7 @@ $(function() {
                         this.imgName = "img/stir.gif";
                         return stirling(this.k, this.n);
                     } else if (this.kMode && this.nMode) {
-                        this.imgName = "img/perm.gif";
+                        this.imgName = "img/part.gif";
                         return perm(this.k, this.n);
                     }
                 }
