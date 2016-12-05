@@ -27,7 +27,7 @@
                             <input v-model.number="k" type="number" step="1">
                             <select v-model.number="kMode" type="number">
                                 <option value="0">DISTINCT</option>
-                                <option value="1">INDISTNCT</option>
+                                <option value="1">INDISTINCT</option>
                             </select>
                         </td>
 
@@ -35,7 +35,7 @@
                             <input v-model.number="n" type="number" step="1">
                             <select v-model.number="nMode" type="number">
                                 <option value="0">DISTINCT</option>
-                                <option value="1">INDISTNCT</option>
+                                <option value="1">INDISTINCT</option>
                             </select>
                         </td>
                         <td>
@@ -49,6 +49,9 @@
                     <tr>
                         <td class="text-center info" colspan="3">
                             <p> {{ k }} {{ modes[kMode] }} into {{ n }} {{ modes[nMode] }} = {{ result }} where {{ options[option] }} </p>
+                            <div class="col-sm-offset-3 col-sm-6">
+                                Formula: <img :src="imgName">
+                            </div>
                         </td>
                     </tr>
                 </tbody>
